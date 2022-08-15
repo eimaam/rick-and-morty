@@ -1,3 +1,9 @@
+# RICK & MORTY CHARACTERS
+Webpage displaying random characters and their short info from Rick and Morty using the Rick and Morty API from [RickAndMortyAPI](https://rickandmortyapi.com/api/character)
+## Technologies used:
+`ReactJS`, `SCSS`, `Vercel` for Deployment
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
