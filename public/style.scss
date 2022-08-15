@@ -20,30 +20,12 @@
     }
 }
 
-@keyframes slideInFromLeft {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: rotate(30deg);
-    }
-  }
-  @keyframes slideInFromRight {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
 *,
 *::after,
 *::before{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    scroll-snap-align: start;
-    scroll-padding-top: 15vh;
 }
 .loader{
     width: 100% !important;
@@ -72,9 +54,7 @@ img{
     max-width: 100%;
     object-fit: cover;
 }
-ul{
-    list-style-type: none;
-}
+
 div,
 button,
 h1,h2,h3,h4,h5,h6,
@@ -246,12 +226,6 @@ header{
 .card:hover{
     transform: scale(1.05);
 }
-
-
-
-
-
-
 
 .footer{
     @include desktopSectionSize;
