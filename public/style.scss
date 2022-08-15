@@ -1,0 +1,229 @@
+@import './variables';
+
+@mixin flex($direction){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+@mixin desktopSectionSize{
+    width: 70%;
+    margin: auto;
+}
+@mixin mobileContainerSize{
+    width: 95%;
+}
+@mixin mobile{
+    @media only screen and (max-width: 820px){
+        @content;
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: rotate(30deg);
+    }
+  }
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-snap-align: start;
+    scroll-padding-top: 15vh;
+}
+
+html, body{
+    margin: auto;
+    scroll-behavior: smooth;
+    font-family: $inconsolata;
+    width: 100%;
+    height: 100%;
+    color: $default;
+    background-color: $bgColor;
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+a{
+    color: $default;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: popoppins;
+}
+img{
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+}
+ul{
+    list-style-type: none;
+}
+div,
+button,
+h1,h2,h3,h4,h5,h6,
+span,p{
+    margin: 0;
+}
+h1{
+    font-family: $dynaPuff;
+    text-transform: uppercase;
+    font-size: 5rem;
+    
+    @include mobile{
+        font-size: 2.5rem;
+    }
+    
+}
+h2{
+    font-family: $poppins;
+    font-size: 2rem;
+    text-transform: uppercase;
+    
+    @include mobile{
+        font-size: 1.6rem;
+    }
+}
+h3{
+    font-family: $ubuntu;
+    text-transform: capitalize;
+    font-size: 1.3rem;
+}
+h4{
+    text-transform: capitalize;
+    font-family: $inconsolata;
+    font-size: 1rem;
+
+    @include mobile{
+        font-size: 0.8rem;
+    }
+}
+p{
+    text-align: justify;
+}
+span{
+    color: $grey;
+    font-size: 1.5rem;
+}
+
+// COMPONENTS styling
+
+// Header component
+header{
+    @include flex(row);
+    width: 100%;
+    height: 30vh;
+    background-color: $default;
+    color: $background;
+    text-align: center;
+
+    h1{
+        font-size: 6rem;
+    }
+}
+// MAIN component
+.main{
+    @include flex(column);
+
+    #container{
+        @include desktopSectionSize;
+        padding: 4rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+    
+        @include mobile{
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+
+// CARD Component
+.card{
+    position: relative;
+    margin: auto;
+    padding: 0.5rem;
+    width: 380px;
+    height: 610px;
+    border: solid $grey;
+    border-radius: 1rem;
+    transition: 1000ms all;
+    
+
+    img{
+        width: 100%;
+        margin: auto;
+        z-index: -1;
+    }
+
+    .status{
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0.5rem;
+        padding-inline: 0.5rem;
+        font-size: 1.5rem;
+        background: white;
+        width: max-content;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .status--alive{
+        @extend .status;
+        color: green;
+    }
+    .status--dead{
+        @extend .status;
+        color: red;
+    }
+    .status--unknown{
+        @extend .status;
+        color: $background;
+    }
+
+    h2{
+        text-align: center;
+    }
+
+    .card--details{
+        letter-spacing: 2px;
+        span{
+            font-size: 1.15rem;
+            color: $grey;
+        }
+    }
+
+}
+.card:hover{
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+
+.footer{
+    @include desktopSectionSize;
+    p{
+        text-align: center;
+        margin: auto;
+    }
+}
