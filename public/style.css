@@ -40,6 +40,10 @@
   scroll-padding-top: 15vh;
 }
 
+.loader {
+  width: 100% !important;
+}
+
 html, body {
   margin: auto;
   scroll-behavior: smooth;
