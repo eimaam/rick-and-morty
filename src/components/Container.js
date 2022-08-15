@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Fade, Flip, Zoom } from 'react-awesome-reveal';
+import { Zoom } from 'react-awesome-reveal';
 import Card from './Card'
-import Footer from './Footer';
-import Header from './Header'
 
 
 export default function Container() {
