@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Fade, Flip, Zoom } from 'react-awesome-reveal';
 import Card from './Card'
 import Footer from './Footer';
 import Header from './Header'
@@ -29,7 +30,9 @@ export default function Container() {
   return (
     <div className='main'>
         <div id='container'>
-            {mappedInfo}
+            <Zoom>
+                {mappedInfo}
+            </Zoom>
         </div>        
     </div>
   )

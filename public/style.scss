@@ -59,10 +59,10 @@ html, body{
     overflow-x: hidden;
 }
 a{
-    color: $default;
+    color: $extras;
     text-decoration: none;
     text-transform: uppercase;
-    cursor: popoppins;
+    cursor: pointer;
 }
 img{
     display: block;
@@ -93,17 +93,21 @@ h2{
     font-size: 2rem;
     text-transform: uppercase;
     
-    @include mobile(820px){
-        font-size: 1.6rem;
-    }
     @include mobile(1300px){
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+    }
+    @include mobile(820px){
+        font-size: 1.2rem;
     }
 }
 h3{
     font-family: $ubuntu;
     text-transform: capitalize;
     font-size: 1.3rem;
+
+    @include mobile(820px){
+        font-size: 1rem;
+    }
 }
 h4{
     text-transform: capitalize;
@@ -153,7 +157,7 @@ header{
     #container{
         @include desktopSectionSize;
         margin: auto;
-        padding: 4rem;
+        padding: 2rem;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         flex-flow: wrap;
@@ -165,6 +169,7 @@ header{
             grid-template-columns: 1fr 1fr;
         }
         @include mobile(820px){
+            width: 100%;
             grid-template-columns: 1fr;
         }
     }
@@ -177,11 +182,19 @@ header{
     margin: auto;
     padding: 0.5rem;
     width: 380px;
-    height: 610px;
+    height: 615px;
     border: solid $grey;
     border-radius: 1rem;
     transition: 1000ms all;
 
+    @include mobile(380px){
+        width: 100%;
+        height: 100%;
+    }
+    @include mobile(820px){
+        width: 75%;
+        height: 100%;
+    }
     img{
         width: 100%;
         margin: auto;
@@ -218,6 +231,7 @@ header{
     }
 
     .card--details{
+        margin-top: 1rem;
         letter-spacing: 2px;
         span{
             font-size: 1.15rem;
